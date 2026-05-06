@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>They Don't Make the Music. They Make the Career.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #111010;
+    --ink-light: #4a4845;
+    --ink-faint: #8a8780;
+    --cream: #f7f4ef;
+    --paper: #fffef9;
+    --rule: #d4cfc7;
+    --accent: #b5321a;
+    --accent-light: #f0e8e5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── TOP RULE ── */
+  .top-rule {
+    background: var(--ink);
+    height: 4px;
+    width: 100%;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .masthead-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .masthead-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-light);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 70px 40px 50px;
+    text-align: center;
+  }
+
+  .hero-kicker {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 26px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-rule {
+    width: 48px;
+    height: 2px;
+    background: var(--accent);
+    margin: 0 auto 26px;
+  }
+
+  .hero-deck {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ink-light);
+    max-width: 580px;
+    margin: 0 auto 32px;
+  }
+
+  .hero-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ── HERO IMAGE ── */
+  .hero-image {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 0;
+    display: block;
+  }
+  .hero-image figure {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .image-placeholder-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+  .image-placeholder-text .icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+    display: block;
+    opacity: 0.5;
+    filter: invert(1);
+  }
+  .image-placeholder-text p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    font-weight: 500;
+  }
+  figcaption {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    padding: 10px 24px;
+    border-left: 2px solid var(--rule);
+    margin: 14px 40px 0;
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+
+  /* ── PERSONAL INTRO ── */
+  .personal-intro {
+    max-width: 700px;
+    margin: 60px auto 0;
+    padding: 0 40px;
+  }
+  .personal-intro-box {
+    background: var(--cream);
+    border-left: 3px solid var(--accent);
+    padding: 28px 32px;
+  }
+  .personal-intro-box p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--ink-light);
+    font-style: italic;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .personal-intro-box .byline-sig {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    font-style: normal;
+  }
+
+  /* ── ARTICLE BODY ── */
+  article {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+  }
+
+  /* Opening paragraphs (before first section) */
+  .article-opening p {
+    font-size: 19px;
+    line-height: 1.85;
+    margin-bottom: 1.4em;
+    color: var(--ink);
+  }
+  .article-opening p:first-child::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.78;
+    margin: 8px 10px -4px 0;
+    color: var(--accent);
+  }
+
+  /* Body paragraphs */
+  section p {
+    margin-bottom: 1.4em;
+    color: var(--ink);
+  }
+  section p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Section headers */
+  section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 60px 0 22px;
+    padding-top: 52px;
+    border-top: 1px solid var(--rule);
+    letter-spacing: -0.01em;
+  }
+
+  /* ── INLINE IMAGE BLOCKS ── */
+  .article-image {
+    margin: 44px 0;
+    max-width: 700px;
+  }
+  .article-image figure {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-image figure::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 40% 50%, rgba(181,50,26,0.15) 0%, transparent 60%);
+  }
+  .article-image figcaption {
+    margin: 12px 0 0;
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--rule);
+    padding-top: 10px;
+  }
+
+  /* ── PULL QUOTES ── */
+  .pull-quote {
+    margin: 44px 0;
+    padding: 32px 36px;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .pull-quote::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 100px;
+    color: var(--accent);
+    line-height: 0;
+    position: absolute;
+    top: 44px;
+    left: 24px;
+    opacity: 0.18;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 14px !important;
+    position: relative;
+    z-index: 1;
+  }
+  .pull-quote cite {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  /* ── MANAGER PROFILES (sidebar-style) ── */
+  .manager-profile-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin: 44px 0;
+    border: 1px solid var(--rule);
+  }
+  .manager-card {
+    background: var(--paper);
+    padding: 22px 20px;
+  }
+  .manager-card .name {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .manager-card .roster {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  .manager-card .detail {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-faint);
+    line-height: 1.6;
+  }
+
+  /* ── STAT CALLOUT ── */
+  .stat-callout {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    margin: 44px 0;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .stat-callout .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .stat-callout .stat-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ── CLOSING RULE ── */
+  .closing-rule {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+  }
+  .closing-rule hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin-bottom: 24px;
+  }
+  .closing-rule p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--ink-faint);
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 28px 40px;
+    text-align: center;
+  }
+  footer p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero h1, .hero-deck, .hero-rule, .hero-kicker, .hero-meta {
+    animation: fadeUp 0.7s ease both;
+  }
+  .hero-kicker  { animation-delay: 0.05s; }
+  .hero h1      { animation-delay: 0.15s; }
+  .hero-rule    { animation-delay: 0.30s; }
+  .hero-deck    { animation-delay: 0.40s; }
+  .hero-meta    { animation-delay: 0.50s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .masthead { padding: 12px 20px; }
+    .hero { padding: 48px 24px 36px; }
+    article { padding: 40px 24px 60px; }
+    .personal-intro { padding: 0 24px; }
+    .article-image { margin: 36px 0; }
+    .manager-profile-strip { grid-template-columns: 1fr; }
+    .stat-callout { flex-direction: column; gap: 10px; }
+    .pull-quote { padding: 24px 20px; }
+    figcaption { margin: 12px 20px 0; }
+    .closing-rule { padding: 0 24px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-rule"></div>
+
+<div class="masthead">
+  <span class="masthead-label">Music Industry Feature</span>
+  <span class="masthead-title">CINE 280 &nbsp;·&nbsp; Duke in LA &nbsp;·&nbsp; Spring 2026</span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="hero-kicker">Artist Management</span>
+  <h1>They Don't Make the Music.<br><em>They Make the Career.</em></h1>
+  <div class="hero-rule"></div>
+  <p class="hero-deck">Three rising managers pull back the curtain on one of the music industry's least understood and most demanding careers.</p>
+  <p class="hero-meta">By Ethan Chen &nbsp;·&nbsp; for CINE 280, Duke in LA</p>
+</header>
+
+<!-- HERO IMAGE -->
+<div class="hero-image">
+  <figure>
+    <img src="laszewo1.jpg" alt="Laszewo" style="width:100%;height:100%;object-fit:cover;display:block;">
+  </figure>
+  <figcaption>The live show is where careers are made — and where managers are always watching.</figcaption>
+</div>
+
+<!-- PERSONAL INTRO -->
+<div class="personal-intro">
+  <div class="personal-intro-box">
+    <p>I came to LA this semester through Duke's Duke in LA program with the music industry already on my mind. Getting to spend time in the city where so much of it actually happens felt like the right opportunity to dig deeper into how it all works. For this project, I got the chance to sit down with three managers in the electronic music world: Kamran Khan, who manages Laszewo and Distant Matter; Jake Horovitz, who manages DJ Mandy; and Ryan MacAvoy, who manages Coastal, Conrad, and Twin Diplomacy. I came out with a much better picture of a job that is harder, more creative, and more all-consuming than I expected.</p>
+    <span class="byline-sig">— Ethan Chen, for CINE 280, Duke in LA</span>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<article>
+
+  <!-- Opening -->
+  <div class="article-opening">
+    <p>Most people at a concert are thinking about the music. The manager in the room is thinking about everything else.</p>
+    <p>Who is watching from the crowd. Whether the booking fee was worth it. What the next show should be, in what city, at what size venue. Whether the set went well enough to send a clip to a label contact. The show is the product, but for the manager, it is also a working session. Every room is a room full of data.</p>
+    <p>Artist management is one of those jobs that is easy to gesture at and hard to actually explain. It is not booking shows, though managers are involved in that. It is not making music, though managers often shape creative direction. It is not the label or the lawyer or the publicist, but the manager talks to all of them, usually more than anyone else does. The simplest version: the manager runs the business so the artist can focus on the music. In practice, the boundaries are a lot blurrier than that.</p>
+    <p>Three managers working in the electronic music space sat down to talk through what the job actually looks like, how they got into it, and what they have learned along the way.</p>
+  </div>
+
+  <!-- Section 1 -->
+  <section>
+    <h2>The Invisible Architecture</h2>
+    <p>The music industry is full of visible jobs. Artists perform. Producers record. Labels release. Agents book. But the manager operates somewhere underneath all of it, the connective tissue that holds every piece of the operation together, answering to everyone and officially employed by none of them.</p>
+
+    <div class="pull-quote">
+      <p>"The worst thing you could be is someone who doesn't believe in you. It's a relevancy game."</p>
+      <cite>Kamran Khan</cite>
+    </div>
+
+    <p>In an era when an artist can go viral on TikTok on a Tuesday and be playing a 500-person headline show by Friday, the manager is the one who makes sure that moment leads somewhere. That means coordinating with agents on bookings, pushing label conversations, overseeing release strategy, managing brand partnerships, directing social content, and keeping the artist mentally intact through all of it. There is no job description, because the job is everything that is not covered by anyone else's job description.</p>
+    <p>And the financial stakes are real. As Jake Horovitz breaks it down: "There's different pegs of where you're going to make money. Touring is probably about half, records is about 25 to 30%, once you get to two million monthly listeners." The manager's commission runs across all of it. Which means if any one peg is missing, everybody loses.</p>
+  </section>
+
+  <!-- Section 2 -->
+  <section>
+    <h2>Everything Except the Music</h2>
+
+    <!-- Inline image -->
+    <div class="article-image">
+      <figure>
+        <img src="kam.jpg" alt="Kamran Khan in the studio" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </figure>
+      <figcaption>Kamran Khan between sessions — the creative conversation never fully stops.</figcaption>
+    </div>
+
+    <p>Ask any of these three managers what their actual job is, and you will get the same answer dressed in different words.</p>
+    <p>"I want to do everything I can to take everything off the artist except for making music and performing," says Kamran. "Music is king. The talent from the creative side is what drives everything. My job is to take the least stress off them as possible."</p>
+    <p>Ryan MacAvoy frames it as a corporate structure: "The manager is the COO. The artist is the CEO. Some managers get that twisted." It is a clean distinction that obscures how messy the reality can be. When an artist is early-stage and still figuring out who they are, the manager is not just running operations. They are helping build the identity those operations are supposed to serve.</p>
+    <p>Horovitz learned this managing DJ Press Play, a joke EDM act that accidentally got three million streams and suddenly had to become a real project. There was no actual artist at the center of it, just a performer in a helmet and music outsourced to different producers. "Since there was no artist, we had to be the artist, basically. We had to have complete creative direction of the project." It was chaotic. It was also, he says, the best education he could have had.</p>
+    <p>That same dynamic would define his later work with DJ Mandy, a TikTok-famous personality who needed a manager willing to wade into creative decisions, not just business ones. "Mandy works very closely with me, and we bounce everything. We're a team. We're partners."</p>
+  </section>
+
+  <!-- Section 3 -->
+  <section>
+    <h2>5:15 A.M. and Counting</h2>
+
+    <!-- Inline image -->
+    <div class="article-image">
+      <figure>
+        <img src="TwinDiplomacy_2025_1031_175121-2913_@AFTERBURNDIGITAL.JPEG" alt="Twin Diplomacy" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </figure>
+      <figcaption>Ryan MacAvoy with Twin Diplomacy — on the road is where the job really lives.</figcaption>
+    </div>
+
+    <p>If there is a single data point that communicates what music management actually demands, it might be this: Ryan MacAvoy typically wakes up between 5:15 and 5:45 in the morning. He works until 9:30 at night, with a break around six to cook dinner. On weekends when he is not touring, he puts in another six to eight hours.</p>
+
+    <div class="stat-callout">
+      <div class="stat-num">16</div>
+      <div class="stat-label">"I'm usually working anywhere from 12 to 16-hour days. And on the weekends if I'm not touring, probably 6 to 8 hours."<br><br><strong style="color:rgba(255,255,255,0.5); font-weight:400; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;">— Ryan MacAvoy</strong></div>
+    </div>
+
+    <p>His schedule is almost architectural in its precision. Morning hours are reserved for creative work, because that is when his thinking is sharpest. A 9 a.m. call with Coastal every single day, fifteen minutes. A 9:30 core team meeting. Heads-down work from 10 to 1. Rolling calls from 1 to 4, stacked back-to-back so the afternoon's second caffeine hit carries him through. A third creative session from 8 to 9:30 p.m. Then he does it again tomorrow.</p>
+    <p>When he is touring, which runs most weekends from Thursday through Sunday, the routine collapses into something rawer. Late nights. Early flights. Hotel rooms that blur together. "I've been on the road since like March 22nd," he says. "I have a lovely girlfriend who lives in LA and she hates when I travel."</p>
+    <p>For Kamran, especially in the early days with Laszewo, the road was also a financial decision as much as a logistical one. "I've been traveling more than a usual manager would, just to do what I can to be there for the group, create a level of comfort, and save costs where we can." When the team is lean, the manager fills in everywhere, tour managing, acting as a de facto agent, handling business logistics that would eventually belong to someone else. "A lot of it is doing it all ourselves," he says. "My job is to fill these roles and be the nucleus."</p>
+  </section>
+
+  <!-- Section 4 -->
+  <section>
+    <h2>Pattern Recognition, Patience, and a Marketing Brain</h2>
+    <p>The question of what makes a great manager, as opposed to a competent one, does not have a clean answer. But three themes surface consistently across these conversations: marketing fluency, genuine passion, and the ability to see around corners.</p>
+    <p>MacAvoy is unambiguous about where he sees the industry heading. "I am a marketing-first manager. I think marketing is the most important thing in entertainment right now." His background spans digital ads, influencer campaigns, social strategy, and a SaaS platform he has been building for music industry marketing. For his artists, that means running ads, understanding how algorithms respond to content, and knowing when organic momentum is real versus when it needs a push.</p>
+    <p>But all the marketing sophistication in the world does not substitute for the foundational thing.</p>
+
+    <div class="pull-quote">
+      <p>"I've never been able to fake being passionate about something, and I've never been good at anything I wasn't naturally passionate about."</p>
+      <cite>Kamran Khan</cite>
+    </div>
+
+    <p>MacAvoy puts the selection criteria simply: "I like working with good people and with people willing to put in the effort to match me. It's the person behind the music and the brand you develop that's almost more important." He does not chase viral moments or hot names. He looks for work ethic, for fit, for the human being behind the project, because that is who he is going to be spending the next several years in close quarters with.</p>
+  </section>
+
+  <!-- Section 5 -->
+  <section>
+    <h2>The Hard Part</h2>
+    <p>Ask Ryan MacAvoy what the hardest part of being a manager is. He does not hesitate.</p>
+
+    <div class="pull-quote">
+      <p>"Dealing with talent."</p>
+      <cite>Ryan MacAvoy</cite>
+    </div>
+
+    <p>The specifics, when he gets into them, are recognizable to anyone who has ever been responsible for someone else's career: artists in duos who disagree with each other, bottlenecks in decision-making, clients who see what a peer has and want it immediately without accounting for how long it actually took that peer to get there. "You have to be patient. Everyone has a different process. Everyone has a different path." He calls himself a coach as much as a manager, keeping artists motivated, pushing them toward the best version of themselves. "Sometimes that's over-passionate," he admits. "And that's where the friction comes in."</p>
+    <p>For Horovitz, the friction took a specific form with a client who had real momentum and genuine talent but was reluctant to make original music. She wanted to stay in the lane of DJ sets. It became a standoff. "Making music is a non-negotiable part of this. If you're not working toward releasing music, that's a problem." The math was simple and brutal. A DJ making $700 a show with no original music generates around $25,000 a year in bookings. A 20 percent management commission on that is not a living for anyone.</p>
+    <p>Kamran offers the most expansive take on why the job is emotionally demanding in a way that catches people off guard. "The artist and manager relationship is the most intimate," he says. "There are so many ups and downs. The relationship is everything."</p>
+  </section>
+
+  <!-- Section 6 -->
+  <section>
+    <h2>Nobody Got Here the Normal Way</h2>
+
+    <!-- Inline image -->
+    <div class="article-image">
+      <figure>
+        <img src="laszewo2.jpg" alt="Laszewo" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </figure>
+      <figcaption>Every manager has a moment when the scale of it all finally clicks.</figcaption>
+    </div>
+
+    <p>None of these three men planned to be music managers.</p>
+    <p><div style="float:right; margin: 6px 0 16px 24px; max-width: 320px;"><figure><img src="IMG_5729.jpeg" alt="Jake Horovitz with DJ Mandy" style="width:100%;display:block;filter:brightness(0.75) saturate(0.8);"><figcaption style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0;border-left:none;border-top:1px solid var(--rule);padding-top:8px;margin:8px 0 0;">Jake Horovitz and DJ Mandy at Shabang 2026</figcaption></figure></div>Horovitz thought he was going to make movies. He graduated from Vanderbilt with a film and English double major, came back to Los Angeles, and found an industry that seemed to be in free fall. He took an unpaid internship at a management company, the pandemic hit the morning his full-time job was supposed to start, and he spent a year building social media brands from his parents' house, watching TikTok explode, learning digital by doing. Management found him. He did not find it.</p>
+
+    <p>Kamran was deep into fintech consulting in the Bay Area when a family connection put him in front of a longtime production manager for The Chainsmokers. He had always been drawn to the manager-artist story, Kygo's rise, Avicii, Louis the Child, but had not yet converted that interest into action. During COVID, fully remote and restless, he found a group on SoundCloud and DM'd them on Instagram. He eventually flew out to Santa Barbara, showed up at their house, and told them he wanted to manage them. They said yes. "There's really no textbook way into it," he says, "and I for sure didn't have a textbook way into it."</p>
+    <p>MacAvoy grew up in Long Island and watched Entourage his freshman year of college. "I never knew people worked in the entertainment industry like this. I didn't know it was truly a business." What followed was a decade-long relay race through a college booking agency he built in Ohio, the CAA mailroom, the early TikTok content house scene, and eventually back to artist management. His first real client called him from jail in week one and tried to get him to wire $10,000. "So my introduction to music management was quite insane," he says.</p>
+    <p>The through-line is not geography or education or connections. It is the willingness to show up before you are qualified, say yes before you are ready, and figure it out on the way.</p>
+  </section>
+
+  <!-- Section 7 -->
+  <section>
+    <h2>The Algorithm Changed Everything</h2>
+
+    <div class="article-image">
+      <figure>
+        <img src="mandy1.jpg" alt="DJ Mandy" style="width:100%;display:block;">
+      </figure>
+      <figcaption>DJ Mandy — the kind of TikTok-era act that is reshaping how the industry thinks about discovery.</figcaption>
+    </div>
+
+    <p>The industry these three managers are working in looks different from the one that existed even five years ago, and it is changing faster than the rulebook can keep up.</p>
+    <p>TikTok created a new pipeline for discovery and a new trap. Artists can accumulate millions of followers without the infrastructure to convert that attention into a sustainable career. MacAvoy, who lived through the early TikTok explosion alongside the platform's biggest influencers, sees this clearly.</p>
+
+    <div class="pull-quote">
+      <p>"Developing talent is kind of a lost art nowadays. A lot of people just try to pick up artists off TikTok and think they can become a talent manager."</p>
+      <cite>Ryan MacAvoy</cite>
+    </div>
+
+    <p>For Kamran, the shift shows up in how opportunity flows. "As we continue to grow, that slide and scale changes, but there's always still those outbound opportunities you're going after too." Early in a career, management is almost entirely outreach: asking for support slots, pitching festivals, chasing any door that might open. As an act develops real traction, offers start coming in. The job shifts from hunting to filtering, but the hunting never fully stops.</p>
+    <p>The modern manager needs to be fluent in streaming data, content strategy, ad platforms, and brand partnerships, on top of tour routing, label negotiations, and the thousand other things the job has always required. The scope keeps expanding. The commission does not.</p>
+  </section>
+
+  <!-- Section 8 -->
+  <section>
+    <h2>Show Up Before You're Ready</h2>
+    <p>The advice these managers offer to anyone trying to break in is not complicated. It just requires patience that most people struggle to hold onto.</p>
+    <p>Find an artist you genuinely believe in, not someone who already has a deal or a million followers, but someone you would bet on before anyone else does. Build relationships without agenda: with agents, with other managers, with lawyers, with promoters, with anyone in any room you can get yourself into. Stop comparing your timeline to someone else's.</p>
+    <p>"I've never really been super focused on volume," says Kamran, who has kept his roster deliberately small. "I've always been against being a volume-heavy manager. I never wanted to put myself or an artist in a position where I'm doing them a disservice."</p>
+    <p>For Kamran, the whole thing traces back to something simpler than strategy. "The two things where work doesn't feel like work," he says, "are tennis and this. Music and management."</p>
+  </section>
+
+  <!-- Section 9 / Conclusion -->
+  <section>
+    <h2>The Career Nobody Planned, and Nobody's Leaving</h2>
+
+    <!-- Inline image -->
+    <div class="article-image">
+      <figure>
+        <img src="laszewo4.jpg" alt="Laszewo" style="width:100%;display:block;">
+      </figure>
+      <figcaption>This is what all of it is for.</figcaption>
+    </div>
+
+    <p>None of them planned this. All of them are exactly where they are supposed to be.</p>
+    <p>Horovitz still writes screenplays on weekends and still loves movies. But he has made his peace with what actually happened. "I've definitely accepted that music and music management is where I'm going to be." He is building DJ Mandy toward what he believes, without apology, is a top-twenty Gen Z musical act in the world. "Really," he says, "the name of the game for us now is just to get a viral song. Once we get that, I think we'll be kind of made."</p>
+    <p>MacAvoy is touring almost every weekend, running ad campaigns at midnight, and waking up at 5:15 to do it again. Kamran is finishing an MBA part-time at UCLA, managing two acts with different sounds and the same relentless upward trajectory, building a team he describes as some of his closest friends.</p>
+    <p>The artists they are betting on right now, DJ Mandy, Laszewo, Coastal, Conrad, Distant Matter, are the names that will matter in five years. And when they do, the people who made it happen will be the ones nobody saw, standing just off stage, watching for the next opportunity before anyone else even knows to look.</p>
+  </section>
+
+    <!-- Manager profiles strip -->
+  <div class="manager-profile-strip">
+    <div class="manager-card">
+      <div class="name">Kamran Khan</div>
+      <div class="roster">Laszewo · Distant Matter</div>
+      <div class="detail">kamran@kkmgmt.co</div>
+    </div>
+    <div class="manager-card">
+      <div class="name">Jake Horovitz</div>
+      <div class="roster">DJ Mandy · Kijo · Whitaswhit · WHOWHENWHY</div>
+      <div class="detail">horvitz@teamwrkmgmt.com</div>
+    </div>
+    <div class="manager-card">
+      <div class="name">Ryan MacAvoy</div>
+      <div class="roster">Coastal · Conrad · Twin Diplomacy</div>
+      <div class="detail">macavoy@atggroup.io</div>
+    </div>
+  </div>
+
+</article>
+
+<!-- CLOSING NOTE -->
+<div class="closing-rule">
+  <hr>
+  <p>The managers profiled in this piece represent a new generation of independent operator in the music industry, unattached to major companies, powered by relationships, and building careers from the ground up in electronic music and beyond.</p>
+</div>
+
+<footer>
+  <p>Ethan Chen &nbsp;·&nbsp; CINE 280 &nbsp;·&nbsp; Duke in LA &nbsp;·&nbsp; Spring 2026</p>
+</footer>
+
+</body>
+</html>
